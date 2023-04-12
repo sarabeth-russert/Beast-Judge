@@ -1,15 +1,27 @@
 import { Component } from 'react';
 
-
 class Main extends Component {
     render() {
       return (
-        <header>
+        <div>
           <h2>{this.props.heading}</h2>
-          <p>{JSON.stringify(this.props.imgUrls)}</p>
-        </header>
+          {
+            this.props.imageUrls.map(imageInfo => <HornedBeast info={imageInfo} />)
+          }
+        </div>
       );
     }
   }
 
+
+class HornedBeast extends Component {
+  render() {
+    return (
+      <div>
+        <p>{this.props.info.title}</p>
+        <p>Either yay or nay</p>
+      </div>
+    );
+  }
+}
   export default Main;
