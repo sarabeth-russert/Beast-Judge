@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Image from 'react-bootstrap/Image'
 
 class Main extends Component {
     render() {
@@ -12,7 +13,6 @@ class Main extends Component {
       );
     }
   }
-
 
 class HornedBeast extends Component {
   constructor(props) {
@@ -37,6 +37,7 @@ class HornedBeast extends Component {
   render() {
     return (
       <div onClick={this.handleClick}>
+        <Image src={this.props.info.image_url} alt='some horned beast' rounded fluid />
         <p>{this.props.info.title}</p>
         <p>{this.state.status}</p>
       </div>
